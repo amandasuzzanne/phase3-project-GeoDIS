@@ -34,7 +34,7 @@ def continent_menu(db):
             for continent in continents:
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area (in sqkm): {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
 
-            id = input("/nEnter continent ID to update: ")
+            id = input("\nEnter continent ID to update: ")
             name = input("Enter new continent name: ")
             area = input("Enter new continent area (in sqkm): ")
             population = input("Enter new continent population: ")
@@ -70,7 +70,7 @@ def language_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}, Language Family: {language[2]}, Writing System: {language[3]}')
 
-            name = input("/nEnter language name: ")
+            name = input("\nEnter language name: ")
             language_family = input("Enter language family: ")
             writing_system = input("Enter language writing system: ")
             db.add_language(name, language_family, writing_system)
@@ -85,7 +85,7 @@ def language_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}, Language Family: {language[2]}, Writing System: {language[3]}')
 
-            id = input("/nEnter language ID to update: ")
+            id = input("\nEnter language ID to update: ")
             name = input("Enter new language name: ")
             language_family = input("Enter new language family: ")
             writing_system = input("Enter new writing system: ")
@@ -96,7 +96,7 @@ def language_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}')
 
-            id = input("/nEnter language ID to delete: ")
+            id = input("\nEnter language ID to delete: ")
             db.delete_language(id)
         elif choice == '5':
             break
@@ -115,7 +115,7 @@ def country_menu(db):
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            print("/nThese countries have already been added:")
+            print("\nThese countries have already been added:")
             countries = db.list_countries()
             for country in countries:
                 print(f'Country ID: {country[0]}, Name: {country[1]}')
