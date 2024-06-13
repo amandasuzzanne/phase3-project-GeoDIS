@@ -19,23 +19,23 @@ def continent_menu(db):
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}')
             
             name = input("Enter continent name: ")
-            area = input("Enter continent area: ")
+            area = input("Enter continent area (in sqkm): ")
             population = input("Enter continent population: ")
             countries = input("Enter number of countries in continent: ")
             db.add_continent(name, area, population, countries)
         elif choice == '2':
             continents = db.list_continents()
             for continent in continents:
-                print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area: {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
+                print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area (in sqkm): {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
         elif choice == '3':
             print("\nThese are the continents you can update:")
             continents = db.list_continents()
             for continent in continents:
-                print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area: {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
+                print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area (in sqkm): {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
 
             id = input("Enter continent ID to update: ")
             name = input("Enter new continent name: ")
-            area = input("Enter new continent area: ")
+            area = input("Enter new continent area (in sqkm): ")
             population = input("Enter new continent population: ")
             countries = input("Enter new number of countries in continent: ")
             db.update_continent(id, name, area, population, countries)
@@ -128,7 +128,7 @@ def country_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}')
             name = input("\nEnter country name: ")
-            area = input("Enter country area: ")
+            area = input("Enter country area (in sqkm): ")
             population = input("Enter country population: ")
             continent_id = input("Enter continent ID: ")
             language_id = input("Enter language ID: ")
@@ -136,12 +136,12 @@ def country_menu(db):
         elif choice == '2':
             countries = db.list_countries()
             for country in countries:
-                print(f'Country ID: {country[0]}, Name: {country[1]}, Area: {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
+                print(f'Country ID: {country[0]}, Name: {country[1]}, Area (in sqkm): {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
         elif choice == '3':
             print("\nThese are the countries you can updaet:")
             countries = db.list_countries()
             for country in countries:
-                print(f'Country ID: {country[0]}, Name: {country[1]}, Area: {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
+                print(f'Country ID: {country[0]}, Name: {country[1]}, Area (in sqkm): {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
 
             id = input("Enter country ID to update: ")
             name = input("Enter new country name: ")
@@ -186,25 +186,25 @@ def city_menu(db):
                 print(f'Country ID: {country[0]}, Name: {country[1]}')
             
             name = input("Enter city name: ")
-            area = input("Enter city area: ")
+            area = input("Enter city area (in sqkm): ")
             population = input("Enter city population: ")
             country_id = input("Enter country ID: ")
             db.add_city(name, area, population, country_id)
         elif choice == '2':
             cities = db.list_cities()
             for city in cities:
-                print(f'City ID: {city[0]}, Name: {city[1]}, Area: {city[2]}, Population: {city[3]}, Country: {city[4]}')
+                print(f'City ID: {city[0]}, Name: {city[1]}, Area (in sqkm): {city[2]}, Population: {city[3]}, Country: {city[4]}')
         elif choice == '3':
             print("These are the cities you can update:")
             cities = db.list_cities()
             for city in cities:
-                print(f'City ID: {city[0]}, Name: {city[1]}, Area: {city[2]}, Population: {city[3]}, Country: {city[4]}')
+                print(f'City ID: {city[0]}, Name: {city[1]}, Area (in sqkm): {city[2]}, Population: {city[3]}, Country: {city[4]}')
 
             id = input("Enter city ID to update: ")
-            name = input("Enter new city name: ")
-            area = input("Enter new city area: ")
-            population = input("Enter new city population: ")
-            country_id = input("Enter new country ID: ")
+            name = input("Enter city name: ")
+            area = input("Enter city area (in sqkm): ")
+            population = input("Enter city population: ")
+            country_id = input("Enter country ID: ")
             db.update_city(id, name, area, population, country_id)
         elif choice == '4':
             print("These are the cities you can delete:")
