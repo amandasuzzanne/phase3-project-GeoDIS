@@ -18,7 +18,7 @@ def continent_menu(db):
             for continent in continents:
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}')
             
-            name = input("Enter continent name: ")
+            name = input("\nEnter continent name: ")
             area = input("Enter continent area (in sqkm): ")
             population = input("Enter continent population: ")
             countries = input("Enter number of countries in continent: ")
@@ -33,7 +33,7 @@ def continent_menu(db):
             for continent in continents:
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area (in sqkm): {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
 
-            id = input("Enter continent ID to update: ")
+            id = input("/nEnter continent ID to update: ")
             name = input("Enter new continent name: ")
             area = input("Enter new continent area (in sqkm): ")
             population = input("Enter new continent population: ")
@@ -45,7 +45,7 @@ def continent_menu(db):
             for continent in continents:
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}')
 
-            id = input("Enter continent ID to delete: ")
+            id = input("\nEnter continent ID to delete: ")
             db.delete_continent(id)
         elif choice == '5':
             break
@@ -69,7 +69,7 @@ def language_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}, Language Family: {language[2]}, Writing System: {language[3]}')
 
-            name = input("Enter language name: ")
+            name = input("/nEnter language name: ")
             language_family = input("Enter language family: ")
             writing_system = input("Enter language writing system: ")
             db.add_language(name, language_family, writing_system)
@@ -83,18 +83,18 @@ def language_menu(db):
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}, Language Family: {language[2]}, Writing System: {language[3]}')
 
-            id = input("Enter language ID to update: ")
+            id = input("/nEnter language ID to update: ")
             name = input("Enter new language name: ")
             language_family = input("Enter new language family: ")
             writing_system = input("Enter new writing system: ")
             db.update_language(id, name, language_family, writing_system)
         elif choice == '4':
-            print("\nThese are languages you can delete:")
+            print("\nThese are the languages you can delete:")
             languages = db.list_languages()
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}')
 
-            id = input("Enter language ID to delete: ")
+            id = input("/nEnter language ID to delete: ")
             db.delete_language(id)
         elif choice == '5':
             break
@@ -143,7 +143,7 @@ def country_menu(db):
             for country in countries:
                 print(f'Country ID: {country[0]}, Name: {country[1]}, Area (in sqkm): {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
 
-            id = input("Enter country ID to update: ")
+            id = input("\nEnter country ID to update: ")
             name = input("Enter new country name: ")
             area = input("Enter new country area: ")
             population = input("Enter new country population: ")
@@ -156,7 +156,7 @@ def country_menu(db):
             for country in countries:
                 print(f'Country ID: {country[0]}, Name: {country[1]}')
 
-            id = input("Enter country ID to delete: ")
+            id = input("\nEnter country ID to delete: ")
             db.delete_country(id)
         elif choice == '5':
             break
@@ -185,7 +185,7 @@ def city_menu(db):
             for country in countries:
                 print(f'Country ID: {country[0]}, Name: {country[1]}')
             
-            name = input("Enter city name: ")
+            name = input("\nEnter city name: ")
             area = input("Enter city area (in sqkm): ")
             population = input("Enter city population: ")
             country_id = input("Enter country ID: ")
@@ -195,24 +195,24 @@ def city_menu(db):
             for city in cities:
                 print(f'City ID: {city[0]}, Name: {city[1]}, Area (in sqkm): {city[2]}, Population: {city[3]}, Country: {city[4]}')
         elif choice == '3':
-            print("These are the cities you can update:")
+            print("\nThese are the cities you can update:")
             cities = db.list_cities()
             for city in cities:
                 print(f'City ID: {city[0]}, Name: {city[1]}, Area (in sqkm): {city[2]}, Population: {city[3]}, Country: {city[4]}')
 
-            id = input("Enter city ID to update: ")
+            id = input("\nEnter city ID to update: ")
             name = input("Enter city name: ")
             area = input("Enter city area (in sqkm): ")
             population = input("Enter city population: ")
             country_id = input("Enter country ID: ")
             db.update_city(id, name, area, population, country_id)
         elif choice == '4':
-            print("These are the cities you can delete:")
+            print("\nThese are the cities you can delete:")
             cities = db.list_cities()
             for city in cities:
                 print(f'City ID: {city[0]}, Name: {city[1]}')
 
-            id = input("Enter city ID to delete: ")
+            id = input("\nEnter city ID to delete: ")
             db.delete_city(id)
         elif choice == '5':
             break
