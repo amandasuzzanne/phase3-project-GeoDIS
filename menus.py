@@ -24,6 +24,7 @@ def continent_menu(db):
             countries = input("Enter number of countries in continent: ")
             db.add_continent(name, area, population, countries)
         elif choice == '2':
+            print("\nHere is a list of all the continents:")
             continents = db.list_continents()
             for continent in continents:
                 print(f'Continent ID: {continent[0]}, Name: {continent[1]}, Area (in sqkm): {continent[2]}, Population: {continent[3]}, Countries: {continent[4]}')
@@ -74,6 +75,7 @@ def language_menu(db):
             writing_system = input("Enter language writing system: ")
             db.add_language(name, language_family, writing_system)
         elif choice == '2':
+            print("\nHere is a list of all the languages:")
             languages = db.list_languages()
             for language in languages:
                 print(f'Language ID: {language[0]}, Name: {language[1]}, Language Family: {language[2]}, Writing System: {language[3]}')
@@ -134,6 +136,7 @@ def country_menu(db):
             language_id = input("Enter language ID: ")
             db.add_country(name, area, population, continent_id, language_id)
         elif choice == '2':
+            print("\nHere is a list of all the countries:")
             countries = db.list_countries()
             for country in countries:
                 print(f'Country ID: {country[0]}, Name: {country[1]}, Area (in sqkm): {country[2]}, Population: {country[3]}, Continent: {country[4]}, Language: {country[5]}')
@@ -191,6 +194,7 @@ def city_menu(db):
             country_id = input("Enter country ID: ")
             db.add_city(name, area, population, country_id)
         elif choice == '2':
+            print("\nHere is a list of all the cities:")
             cities = db.list_cities()
             for city in cities:
                 print(f'City ID: {city[0]}, Name: {city[1]}, Area (in sqkm): {city[2]}, Population: {city[3]}, Country: {city[4]}')
