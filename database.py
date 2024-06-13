@@ -12,8 +12,8 @@ def create_tables():
     cursor.execute('''CREATE TABLE IF NOT EXISTS continents(
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL,
-                   area FLOAT,
-                   population INTEGER,
+                   area TEXT,
+                   population TEXT,
                    countries INTEGER 
     )''')
 
@@ -27,8 +27,8 @@ def create_tables():
     cursor.execute('''CREATE TABLE IF NOT EXISTS countries(
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL,
-                   area FLOAT,
-                   population INTEGER,
+                   area TEXT,
+                   population TEXT,
                    continent_id INTEGER,
                    language_id INTEGER,
                    FOREIGN KEY(continent_id) REFERENCES continents(id),
@@ -38,8 +38,8 @@ def create_tables():
     cursor.execute('''CREATE TABLE IF NOT EXISTS cities(
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    name TEXT NOT NULL,
-                   area FLOAT,
-                   population INTEGER,
+                   area TEXT,
+                   population TEXT,
                    country_id INTEGER,
                    FOREIGN KEY(country_id) REFERENCES countries(id)
     )''')
